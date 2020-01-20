@@ -1,0 +1,6 @@
+node_modules
+bin
+.settings
+*.mp3
+.project
+.DS_Store

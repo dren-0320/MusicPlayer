@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<title>Todo List</title>
+<link rel=”icon” href=“/image/favicon.ico”>
+<link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+<style>
+	.text_2 {
+		white-space: pre;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="client.js">
+</script>
+</head>
+<body>
+	<div class="container">
+		<h1>Task List</h1>
+		<a href="home.html">home</a> <br>
+		<button onclick="getTodos_1()">1</button>
+		<button onclick="getTodos_2()">2</button>
+		<button onclick="getTodos_3()">3</button>
+		<button onclick="getTodos_4()">4</button>
+		<button onclick="getTodos_5()">5</button>
+		<br>
+		<button onclick="getTodos_6()">6</button>
+		<button onclick="getTodos_7()">7</button>
+		<button onclick="getTodos_8()">8</button>
+		<button onclick="getTodos_9()">9</button>
+		<button onclick="getTodos_10()">10</button>
+		<br>
+		<div class="music-form">
+			<audio src="audio/CQCQ.mp3" controls></audio>
+		</div>
+
+		<h2>Current Tasks</h2>
+		<table class="table table-striped task-table">
+			<thead>
+				<th>Task</th>
+				<th>&nbsp;</th>
+			</thead>
+			<tbody class="todos">
+				<tr class="todo template" style="display: none;">
+					<td>
+					number<span class="m_id"></span> <br>
+					title<span class="text"></span> <br> <br> <br>
+					lylick<span class="text_2"></span> <br>
+					path<span id="a_p" class="audio_path"></span>
+					<span class="id" style="display: none;"></span>
+					</td>
+					<td>
+						<button onclick="deleteTodo(this)">Delete</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
