@@ -1,11 +1,8 @@
-/*jshint esversion: 6 */
-
 const express = require("express");
 const app = express();
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
 const path = require("path");
-const fileUpload = require("express-fileupload");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 const multer = require("multer");
 
 const options = {
@@ -17,7 +14,6 @@ mongoose.connect("mongodb://localhost/mydb", options);
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    // 保存したいパス
     cb(null, path.join(__dirname, "public/audio"));
   },
   filename: function(req, file, cb) {
@@ -26,168 +22,140 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
-/*const upload = multer({ dest: './audio/' });*/
 
-/*app.use(upload.single('myfile'));*/
 app.use(bodyParser.json());
-app.use(bodyParser.raw({ type: "audio/mpeg", limit: "100mb" }));
 app.use(express.static(__dirname + "/public"));
-app.use(express.static(__dirname + "/audio"));
 
-const Todo = mongoose.model("Todo", {
+const Music = mongoose.model("Music", {
   m_id: String,
-  text: String,
-  audio_path: String,
-  text_2: String
+  m_title: String,
+  m_lyrics: String,
+  m_path: String
 });
 
-app.get("/api/todos", (req, res) => {
-  Todo.find()
-    .then(todos => {
-      res.json(todos);
+app.get("/api/music", (req, res) => {
+  Music.find()
+    .then(musics => {
+      res.json(musics);
     })
     .catch(err => {
       res.send(err);
     });
 });
-app.get("/api/todos/1", (req, res) => {
-  Todo.find({ m_id: "1" })
-    .then(todos => {
-      res.json(todos);
+app.get("/api/music/1", (req, res) => {
+  Music.find({ m_id: "1" })
+    .then(musics => {
+      res.json(musics);
     })
     .catch(err => {
       res.send(err);
     });
 });
-app.get("/api/todos/2", (req, res) => {
-  Todo.find({ m_id: "2" })
-    .then(todos => {
-      res.json(todos);
+app.get("/api/music/2", (req, res) => {
+  Music.find({ m_id: "2" })
+    .then(musics => {
+      res.json(musics);
     })
     .catch(err => {
       res.send(err);
     });
 });
-app.get("/api/todos/3", (req, res) => {
-  Todo.find({ m_id: "3" })
-    .then(todos => {
-      res.json(todos);
+app.get("/api/music/3", (req, res) => {
+  Music.find({ m_id: "3" })
+    .then(musics => {
+      res.json(musics);
     })
     .catch(err => {
       res.send(err);
     });
 });
-app.get("/api/todos/4", (req, res) => {
-  Todo.find({ m_id: "4" })
-    .then(todos => {
-      res.json(todos);
+app.get("/api/music/4", (req, res) => {
+  Music.find({ m_id: "4" })
+    .then(musics => {
+      res.json(musics);
     })
     .catch(err => {
       res.send(err);
     });
 });
-app.get("/api/todos/5", (req, res) => {
-  Todo.find({ m_id: "5" })
-    .then(todos => {
-      res.json(todos);
+app.get("/api/music/5", (req, res) => {
+  Music.find({ m_id: "5" })
+    .then(musics => {
+      res.json(musics);
     })
     .catch(err => {
       res.send(err);
     });
 });
-app.get("/api/todos/6", (req, res) => {
-  Todo.find({ m_id: "6" })
-    .then(todos => {
-      res.json(todos);
+app.get("/api/music/6", (req, res) => {
+  Music.find({ m_id: "6" })
+    .then(musics => {
+      res.json(musics);
     })
     .catch(err => {
       res.send(err);
     });
 });
-app.get("/api/todos/7", (req, res) => {
-  Todo.find({ m_id: "7" })
-    .then(todos => {
-      res.json(todos);
+app.get("/api/music/7", (req, res) => {
+  Music.find({ m_id: "7" })
+    .then(musics => {
+      res.json(musics);
     })
     .catch(err => {
       res.send(err);
     });
 });
-app.get("/api/todos/8", (req, res) => {
-  Todo.find({ m_id: "8" })
-    .then(todos => {
-      res.json(todos);
+app.get("/api/music/8", (req, res) => {
+  Music.find({ m_id: "8" })
+    .then(musics => {
+      res.json(musics);
     })
     .catch(err => {
       res.send(err);
     });
 });
-app.get("/api/todos/9", (req, res) => {
-  Todo.find({ m_id: "9" })
-    .then(todos => {
-      res.json(todos);
+app.get("/api/music/9", (req, res) => {
+  Music.find({ m_id: "9" })
+    .then(musics => {
+      res.json(musics);
     })
     .catch(err => {
       res.send(err);
     });
 });
-app.get("/api/todos/10", (req, res) => {
-  Todo.find({ m_id: "10" })
-    .then(todos => {
-      res.json(todos);
+app.get("/api/music/10", (req, res) => {
+  Music.find({ m_id: "10" })
+    .then(musics => {
+      res.json(musics);
     })
     .catch(err => {
       res.send(err);
     });
 });
 
-app.post("/api/todos", upload.single("myfile"), (req, res) => {
-  /*const file = req.files.file;*/
-  /*req.files.audio.mv('./audio/' + req.files.audio.name);*/
-  /*console.log(req.files.name);*/
-  /*req.files.audio.mv('/audio/' + req.files.name);*/
-  const todo = req.body;
-  console.log(todo.audio_path);
-  console.log(req.myfile); // form file
+app.post("/api/music", upload.single("file"), (req, res) => {
+  const audio = req.body;
 
-  console.log(req.body);
-  console.log(req.file);
-  /*console.log(todo.m_file.name);*/
-  Todo.create({
-    m_id: todo.m_id,
-    text: todo.text,
-    audio_path: '<audio src="audio/' + todo.audio_path + '" controls></audio>',
-    text_2: todo.text_2
+  Music.create({
+    m_id: audio.m_id,
+    m_title: audio.m_title,
+    m_lyrics: audio.m_lyrics,
+    m_path: '<audio src="audio/' + audio.m_path + '" controls></audio>'
   })
-    .then(todo => {
-      res.json(todo);
+    .then(music => {
+      res.json(music);
     })
     .catch(err => {
       res.send(err);
     });
 });
 
-/*app.post('/api/todos', (req, res) => {
-    const todo = req.body;
-    Todo.create({
-            m_id : todo.m_id,
-            text : todo.text,
-            text_2 : todo.text_2
-        })
-        .then((todo) => {
-            res.json(todo);
-        })
-        .catch((err) => {
-            res.send(err);
-        });
-});*/
-
-app.delete("/api/todos/:todo_id", (req, res) => {
-  Todo.remove({
-    _id: req.params.todo_id
+app.delete("/api/music/:music_id", (req, res) => {
+  Music.remove({
+    _id: req.params.music_id
   })
-    .then(todo => {
-      res.send(todo);
+    .then(music => {
+      res.send(music);
     })
     .catch(err => {
       res.send(err);
@@ -199,5 +167,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("My app listening on port 3000!");
+  console.log("MusicPlayer listening on port 3000!");
 });

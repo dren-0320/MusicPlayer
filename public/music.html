@@ -1,59 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<title>Todo List</title>
-<link rel=”icon” href=“/image/favicon.ico”>
-<link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
-<style>
-	.text_2 {
-		white-space: pre;
-	}
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="client.js">
-</script>
-</head>
-<body>
-	<div class="container">
-		<h1>Task List</h1>
-		<a href="home.html">home</a> <br>
-		<button onclick="getTodos_1()">1</button>
-		<button onclick="getTodos_2()">2</button>
-		<button onclick="getTodos_3()">3</button>
-		<button onclick="getTodos_4()">4</button>
-		<button onclick="getTodos_5()">5</button>
-		<br>
-		<button onclick="getTodos_6()">6</button>
-		<button onclick="getTodos_7()">7</button>
-		<button onclick="getTodos_8()">8</button>
-		<button onclick="getTodos_9()">9</button>
-		<button onclick="getTodos_10()">10</button>
-		<br>
-		<div class="music-form">
-			<audio src="audio/CQCQ.mp3" controls></audio>
-		</div>
+  <head>
+    <title>MusicPlayer</title>
+    <link rel="icon" href="/image/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css"
+    />
+    <style>
+      .audio-control {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 15px;
+        left: 6px;
+      }
+      .sticky {
+        background-color: #9b4dca;
+        border: 0.1rem solid #9b4dca;
+        border-radius: 0.4rem;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 1.1rem;
+        font-weight: 700;
+        height: 3.8rem;
+        letter-spacing: 0.1rem;
+        line-height: 3.8rem;
+        padding: 0 3rem;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        white-space: nowrap;
+        z-index: 1000;
+        margin: 6px;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 80px;
+        left: 6px;
+      }
+      .m_lyrics {
+        white-space: pre;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(function() {
+        $('a[href^="#start"]').click(function() {
+          var speed = 40000;
+          var href = $(this).attr("href");
+          var target = $('a[href^="#end"]');
+          var position = target.offset().top;
+          $("body,html").animate(
+            {
+              scrollTop: position
+            },
+            speed,
+            "swing"
+          );
+          return false;
+        });
+        $('a[href^="#stop"]').click(function() {
+          $("body,html").stop();
+          return false;
+        });
+      });
+    </script>
+    <script src="client.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>MusicPlayer</h1>
+      <a href="home.html">▶︎ホーム</a> <br /><br />
+      <button onclick="getMusic_1()">1</button>
+      <button onclick="getMusic_2()">2</button>
+      <button onclick="getMusic_3()">3</button>
+      <button onclick="getMusic_4()">4</button>
+      <button onclick="getMusic_5()">5</button>
+      <br />
+      <button onclick="getMusic_6()">6</button>
+      <button onclick="getMusic_7()">7</button>
+      <button onclick="getMusic_8()">8</button>
+      <button onclick="getMusic_9()">9</button>
+      <button onclick="getMusic_10()">10</button>
+      <br /><br />
+      <div class="audio-control">
+        <audio src="" controls></audio>
+      </div>
+      <br />
+      <a href="#start" , class="sticky">Scroll</a>
+      <a href="#stop" , class="sticky">Stop</a>
+      <br /><br />
 
-		<h2>Current Tasks</h2>
-		<table class="table table-striped task-table">
-			<thead>
-				<th>Task</th>
-				<th>&nbsp;</th>
-			</thead>
-			<tbody class="todos">
-				<tr class="todo template" style="display: none;">
-					<td>
-					number<span class="m_id"></span> <br>
-					title<span class="text"></span> <br> <br> <br>
-					lylick<span class="text_2"></span> <br>
-					path<span id="a_p" class="audio_path"></span>
-					<span class="id" style="display: none;"></span>
-					</td>
-					<td>
-						<button onclick="deleteTodo(this)">Delete</button>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</body>
+      <h2>楽曲情報</h2>
+      <table>
+        <tbody class="musics">
+          <tr class="music template" style="display: none;">
+            <td>
+              Number: <span class="m_id"></span> <br />
+              Title: <span class="m_title"></span> <br /><br />
+              Lyricks:<br /><span class="m_lyrics"></span> <br />
+              <span class="id" style="display: none;"></span>
+            </td>
+            <td>
+              <button onclick="deleteMusicPage(this)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <a href="#end"></a>
+  </body>
 </html>
