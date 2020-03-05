@@ -18,13 +18,16 @@
 ## Demo
 1. 所持している音楽ファイルを選択する<br>
 <img width="1362" alt="スクリーンショット 2020-03-05 22 53 42" src="https://user-images.githubusercontent.com/60092543/75992360-2e235c80-5f3b-11ea-8269-f1eca1de1ae2.png">
+<br>
 
 2. 一意な楽曲ID、タイトル、歌詞を入力し、「ADD」ボタンをクリックする<br>
 <img width="1365" alt="スクリーンショット 2020-03-05 22 54 36" src="https://user-images.githubusercontent.com/60092543/75992371-34193d80-5f3b-11ea-9886-237750335d25.png">
+<br>
 
 3. 楽曲再生ページに移動し、聴きたい楽曲の楽曲IDと一致するボタンをクリックし、再生ボタンを押すことで音楽が再生される<br>
 　「SCROLL」ボタンで自動スクロールを開始、「STOP」ボタンで停止することができる<br>
 <img width="1365" alt="スクリーンショット 2020-03-05 22 55 38" src="https://user-images.githubusercontent.com/60092543/75992373-354a6a80-5f3b-11ea-8787-097b7f7d635c.png">
+<br>
 
 ## Requirement
 ```
