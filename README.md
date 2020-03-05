@@ -1,7 +1,7 @@
 
 
 # MusicPlayer
-![player_button01_saisei](https://user-images.githubusercontent.com/60092543/75993977-a2f79600-5f3d-11ea-9f37-211c5c980e1b.png)
+![12_8bu_onpu_renkou](https://user-images.githubusercontent.com/60092543/75995287-8c523e80-5f3f-11ea-8b1b-a01663c78fe7.png)
 <br>
 
 
