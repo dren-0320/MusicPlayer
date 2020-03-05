@@ -151,7 +151,7 @@ app.post("/api/music", upload.single("file"), (req, res) => {
 });
 
 app.delete("/api/music/:music_id", (req, res) => {
-  Music.remove({
+  Music.deleteOne({
     _id: req.params.music_id
   })
     .then(music => {
