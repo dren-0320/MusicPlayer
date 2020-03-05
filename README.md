@@ -1,27 +1,28 @@
 
 
 # MusicPlayer
-
+![player_button01_saisei](https://user-images.githubusercontent.com/60092543/75993977-a2f79600-5f3d-11ea-9f37-211c5c980e1b.png)
+<br>
 
 
 ## Overview
 ブラウザ上で使うことのできる音楽プレイヤー<br>
 
 ## Description
-・楽曲登録ページ<br>
-　自分の所持している音楽ファイルを楽曲ID・タイトル・歌詞を付与してアップロードし、それらのデータをMongoDBに保存する（音楽ファイルをパス名の保存）<br>
+* 楽曲登録ページ<br>
+　自分の所持している音楽ファイルを楽曲ID・タイトル・歌詞を付与してアップロードし、それらのデータをMongoDBに保存する（音楽ファイルはパス名の保存）<br>
  
-・楽曲再生ページ<br>
+* 楽曲再生ページ<br>
 　MongoDBに保存されている情報を楽曲IDボタンによって検索し、その楽曲IDの音楽を再生する<br>
 
 ## Demo
-1.所持している音楽ファイルを選択する<br>
+1. 所持している音楽ファイルを選択する<br>
 <img width="1362" alt="スクリーンショット 2020-03-05 22 53 42" src="https://user-images.githubusercontent.com/60092543/75992360-2e235c80-5f3b-11ea-8269-f1eca1de1ae2.png">
 
-2.一意な楽曲ID、タイトル、歌詞を入力し、「ADD」ボタンをクリックする<br>
+2. 一意な楽曲ID、タイトル、歌詞を入力し、「ADD」ボタンをクリックする<br>
 <img width="1365" alt="スクリーンショット 2020-03-05 22 54 36" src="https://user-images.githubusercontent.com/60092543/75992371-34193d80-5f3b-11ea-9886-237750335d25.png">
 
-3.楽曲再生ページに移動し、聴きたい楽曲の楽曲IDと一致するボタンをクリックし、再生ボタンを押すことで音楽が再生される<br>
+3. 楽曲再生ページに移動し、聴きたい楽曲の楽曲IDと一致するボタンをクリックし、再生ボタンを押すことで音楽が再生される<br>
 　「SCROLL」ボタンで自動スクロールを開始、「STOP」ボタンで停止することができる<br>
 <img width="1365" alt="スクリーンショット 2020-03-05 22 55 38" src="https://user-images.githubusercontent.com/60092543/75992373-354a6a80-5f3b-11ea-8787-097b7f7d635c.png">
 
@@ -38,27 +39,27 @@
 ```
 
 ## Install
-・MongoDBのインストール  
+* MongoDBのインストール  
 ```
 $ brew install mongodb
 ```
 
-・expressのインストール
+* expressのインストール
 ```
 $ npm install express
 ```
 
-・nodemonのインストール
+* nodemonのインストール
 ```
 $ npm install nodemon
 ```
 
-・mongooseのインストール
+* mongooseのインストール
 ```
 $ npm install mongoose --save
 ```
 
-・multerのインストール
+* multerのインストール
 ```
 $ npm install --save multer
 ```
@@ -74,8 +75,8 @@ $ npm start
 ```
 
 ## Note 
-音楽ファイルは.mp3ファイルを対象とする<br>
-ブラウザはGoogle Chromeを対象とする<br>
+* 音楽ファイルは.mp3ファイルを対象とする<br>
+* ブラウザはGoogle Chromeを対象とする<br>
 
 ## Author
 * dren-0320
