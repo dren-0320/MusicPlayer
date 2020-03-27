@@ -21,6 +21,7 @@
 <br>
 
 2. 一意な楽曲ID、タイトル、歌詞を入力し、「ADD」ボタンをクリックする<br>
+   登録楽曲の一覧に追加される<br>
 <img width="1365" alt="スクリーンショット 2020-03-05 22 54 36" src="https://user-images.githubusercontent.com/60092543/75992371-34193d80-5f3b-11ea-9886-237750335d25.png">
 <br>
 
