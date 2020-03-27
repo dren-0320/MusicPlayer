@@ -6,7 +6,7 @@
 
 
 ## Overview
-ブラウザ上で使うことのできる音楽プレイヤー<br>
+Node.js、Express、MongoDBを用いたブラウザ上で使うことのできる音楽プレイヤー<br>
 
 ## Description
 * 楽曲登録ページ<br>
